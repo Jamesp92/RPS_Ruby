@@ -1,16 +1,48 @@
 require 'pry'
 
 class RPS 
-  # def initialize
-  #   self.start
-  # end
-  # def start
-  #   puts "Choose your weapon: Rock, Paper or Scissors"
-  #   player_weapon = gets
-  #   self.battle_engine(player_weapon)
-  # end
+  def battle_engine_good(player_weapon)
+    a = player_weapon
 
-  def battle_engine(player_weapon)
+    robot_string = ''
+
+    if (a == "rock")
+      b = "paper"
+      robot_string.concat("WOW! nice try maybe next time ")
+    elsif ( a == "paper")
+      b = "scissors"
+      robot_string.concat ("can't beleive i won heres $10")
+    elsif ( a == "scissors")
+      b = "rock"
+      robot_string.concat("you're the best , i love you ")
+    else 
+      robot_string.concat("that was a good weapon choice but it does not compute")
+    end
+    return b, robot_string 
+  end
+
+  def battle_engine_bad(player_weapon)
+    a = player_weapon
+
+    robot_string = ''
+
+    if (a == "rock")
+      b = "scissors"
+      robot_string.concat("ROBOT SAYS: WHAT?! How did I lose?!")
+    elsif (a == "scissors")
+      b = "paper"
+      robot_string.concat("ROBOT SAYS: NOOOOOOOOOOO!!!!")
+    elsif (a == "paper")
+      b = "rock"
+      robot_string.concat("ROBOT SAYS: CHEATER! YOU MUST BE CHEATING!?")
+    else
+      puts "only goes to else"
+    end
+    return b, robot_string
+
+  end
+
+def battle_engine(player_weapon)
     a = player_weapon
     b = robot_weapon
 
